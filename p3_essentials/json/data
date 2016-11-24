@@ -1,0 +1,24 @@
+{
+"Employee":[
+    {
+    "name": "Pito",
+    "department": "Engineering",
+    "id": "1",
+    "city": "Melbourne"
+    },
+    {
+    "name": "Beto",
+    "department": "Army",
+    "id": "2",
+    "manager": "Ralf",
+    "city": "Augusta"
+    },
+    {
+    "name": "Seb",
+    "department": "Student",
+    "id": "3",
+    "manager": "Pito",
+    "city": "Indilantic"
+    }
+]
+}

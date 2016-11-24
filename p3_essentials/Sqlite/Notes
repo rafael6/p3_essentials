@@ -1,0 +1,25 @@
+The following table shows the relation between SQLite data types and Python data types:
+
+    None type is converted to NULL
+    int type is converted to INTEGER
+    float type is converted to REAL
+    str type is converted to TEXT
+    bytes type is converted to BLOB
+
+
+
+Useful methods from db class:
+
+print_all()
+Retrieve all rows ordered by timestamp
+Should be renamed to retrieved_all()
+
+retrieve_all()
+Retrieve all rows for a given ip_element ordered by timestamp
+Should be renamed to retrieve_element
+
+delete()
+Deletes all rows for a given ip_elements
+Should be renamed to delete_element()
+
+

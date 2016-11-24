@@ -1,0 +1,19 @@
+Pyhton look for modules in the following order:
+    local directory
+    Lib
+    site-packages
+
+Python's lib directory is for standard packages
+
+To use your a module you created from any directory place module in site-packages
+usr/local/lib/pythonx.y/site-packages
+
+
+import example --> import some_module
+usage          --> some_module.some_function()
+
+import example --> from some_module import some_function
+usage          --> some_function()
+
+import example --> from some_module import some_function as f
+usage          --> f()
