@@ -2,7 +2,7 @@
 They are unordered
 Key must be unique
 
-Coomon methods: d.keys(), d.values, d.items()
+Comon methods: d.keys(), d.values, d.items()
 '''
 
 # Classic build
