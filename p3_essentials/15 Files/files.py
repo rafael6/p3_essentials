@@ -16,7 +16,7 @@ use f.seek(0) To return to begining of file after a f.read()
 '''
 
 # Basic
-'''
+
 def main():
     f = open('lines.txt')
     for line in f:
@@ -83,7 +83,7 @@ if __name__ == "__main__": main()
 
 # With closes the file for you even if an exception occurs
 import timeit
-'''
+
 def main():
     with open('lines.txt', 'r+') as fh:
         for line in fh:
@@ -94,9 +94,18 @@ def main2():
         for line in fh.readlines():  # readlines() put the file in a list where each element is a line
             print(line, end='')
 
+# with & error handling:
+try:
+    with open("test.txt") as file_handler:
+        for line in file_handler:
+            print(line)
+except IOError:
+    print("An IOError has occurred!")
 
 if __name__ == "__main__":
     #timeit.main()
     main()
     print()
     main2()
+
+

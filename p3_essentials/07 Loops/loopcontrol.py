@@ -1,7 +1,7 @@
 #!/usr/bin/python3
-# break.py by Bill Weinman [http://bw.org/]
-# This is an exercise file from Python 3 Essential Training on lynda.com
-# Copyright 2010 The BearHeart Group, LLC
+
+# Continue is to skip an item in the iterator and contine with the loop.
+# Break is to break out of the loop.
 
 def main():
     print('Continue example:')
@@ -24,6 +24,19 @@ def main():
         print(' no more letters')
 
     print('\nelse with while loop')
+    # Primary use of else statement is to find an item
+    # The else statement in this example only execute if the entire list is exasted
+    my_list = [1, 2, 3, 4, 5]
+
+    for i in my_list:
+        if i == 3:
+            print("Item found!")
+            break
+        print(i)
+    else:
+        print("Item not found!")
+
+# Another example
     i = 0
     while i < len(s):
         print(s[i], end='')

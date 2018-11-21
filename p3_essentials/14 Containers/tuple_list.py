@@ -30,6 +30,9 @@ print(type(t1))# Is an integer
 
 
 print('\n')
+# create an empty list
+l = []
+l = list()
 
 # List are mutable
 l = list(range(10))  # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
@@ -59,7 +62,7 @@ print(l.index('c'))  # Prints the index for item with value 9.
 l = ['a', 'b', 'c', 'c', 'c']
 print(l.count('c'))
 
-# Sort a list
+# Sort a list. Can only sort in place, can't assign to variable.
 l = [9, 8, 7, 6, 5, 4, 3, 2, 1]
 print(sorted(l))
 l = ['zack', 'jack', 'ham']
@@ -70,3 +73,8 @@ l = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
 l.reverse()
 print(l)
 
+# Extend a list
+combo_list = []
+one_list = [4, 5]
+combo_list.extend(one_list)
+print(combo_list)  # [4, 5]

@@ -73,3 +73,7 @@ numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 even = [add_one(x) for x in numbers if x % 2 == 0]
 
 print(even)
+
+# Combine two list together:
+vec = [[1,2,3], [4,5,6], [7,8,9]]
+[num for elem in vec for num in elem]
