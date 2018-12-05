@@ -10,3 +10,9 @@ print(x)
 l = [1,1,1,2,2,2,3,3,3,4]
 s = set(l)
 print(s)
+
+s = {'a', 'b', 'c'}
+s.add('d')
+print(s)
+s.add('d')
+print(s)
