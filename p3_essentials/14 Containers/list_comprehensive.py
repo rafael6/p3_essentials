@@ -77,3 +77,6 @@ print(even)
 # Combine two list together:
 vec = [[1,2,3], [4,5,6], [7,8,9]]
 [num for elem in vec for num in elem]
+
+# With if-else conditions
+[x+1 if x >= 120000 else x+5 for x in feet]
