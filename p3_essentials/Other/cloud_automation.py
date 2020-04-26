@@ -1,5 +1,4 @@
 #!/usr/bin/env python
-# aws disector
 import requests
 import json
 
@@ -54,10 +53,10 @@ def get_region_ipv4(region, service=None):
 
 def main():
     #get_all_ipv4()
-    get_region_ipv4('us-gov-west-1')
-    get_region_ipv4('us-gov-west-1', 'S3')
+    #get_region_ipv4('us-gov-west-1')
+    #get_region_ipv4('us-gov-west-1', 'S3')
     #get_region_ipv4('us-gov-west-1', 'EC2')
-    #get_regions()
+    get_regions()
     #get_services()
 
 if __name__ == '__main__':
@@ -208,19 +207,19 @@ def main():
 if __name__ == '__main__':
     main()
     
-    #####################################################################################
-    
-# azure_gov_dissector
+    ###################################!!!!!!##############################################
 import json
 import requests
 
-uri = 'https://download.microsoft.com/download/6/4/D/64DB03BF-895B-4173-A8B1-BA4AD5D4DF22/ServiceTags_AzureGovernment_20200121.json'
+monday = '20200316'
+# https://www.microsoft.com/en-us/download/confirmation.aspx?id=57063
+uri = f'https://download.microsoft.com/download/6/4/D/64DB03BF-895B-4173-A8B1-BA4AD5D4DF22/ServiceTags_AzureGovernment_{monday}.json'
 
 ip_ranges = requests.get(uri).json()['values']
 
 
 def get_all():
-    Print('All values:')
+    print('All values:')
     all = json.dumps(ip_ranges, indent=4)
     print(all)
 
@@ -284,13 +283,14 @@ def main():
     #get_regions()
     #get_services()
     get_region_ipv4('usgovvirginia')
-    get_region_ipv4('usgovvirginia', 'AzureStorage')
+    #get_region_ipv4('usgovvirginia', 'AzureStorage')
     #get_ids()
 
 if __name__ == '__main__':
     main()
+
     
-   
+
       #####################################################################################
       
  #!/usr/bin/python3
