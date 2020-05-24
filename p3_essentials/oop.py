@@ -149,3 +149,42 @@ class Math:
 
 print(Math.add5(3)) # 8
 print(Math.add10(3)) # 13
+
+#### Class getters, setters, deleters ####
+# @property = Define a method but you access it like an atr, no ()
+
+class Employee:
+    def __init__(self, first, last):
+        self.first = last 
+        self.last = last
+    
+    @property
+    def email(self):
+        return f'{self.first}.{self.last}@email.com'
+    
+    @property
+    def fullname(self):
+        return f'{self.first} {self.last}'
+
+    @fullname.setter
+    def fullname(self, name):
+        first, last = name.split(' ')
+        self.first = first
+        self.last = last
+
+    @fullname.deleter
+    def fullname(self):
+        print('Delining name!')
+        self.first = None
+        self.last = None
+
+emp_1 = Employee('John', 'Smith')
+emp_1.fullname = 'Rafael Gonzalez'
+
+print(emp_1.first)
+print(emp_1.last)
+print(emp_1.email)
+print(emp_1.fullname)
+
+del emp_1.fullname
+print(emp_1.fullname)
