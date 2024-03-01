@@ -1,0 +1,69 @@
+To store and exchange data 
+It is readable but not as concise as YAML
+Python support JSON nitavely via json library 
+Serialization: (encoding, writing to disk) the process of transforming data into bytes to be stored or transmited 
+Deserialization: (decoding/reading into memory) the process of decoding JSON data that has been stored or delivered
+
+SERIALISATION:
+Turning Python to JSON objects
+
+Methods:
+  dump() for writing data to file
+  dumps() for reading to a string
+
+Python / JSON:
+  dict / object
+  list, tuple / array
+  str / string
+  int, long, float / number
+  True / true
+  False / false
+  None / null
+
+JSON example:
+data = {
+    "people": { 
+        "name": "Rafael",
+        "species": '"Human
+    }
+}
+
+Create a file with context manager, <write_file> is the file-like object
+with open ("data_file.json", "w") as write_file:
+    json.dump(data, write_file)
+
+Create native Python str, no file-like object since we are not writting to disk
+json_string = json.dumps(data)
+
+Nested/Indentation:
+json_string = json.dumps(data, indent=4)
+
+Separators:
+Default = json_string = json.dumps(data, separators (", ", ": "))
+Compact = json_string = json.dumps(data, separators (",", ":"))
+
+DESERIALIZATION:
+Turning JSON into Python objects
+JSON / Python:
+  object / dict
+  array / list
+  string / str
+  number (int) / int
+  number (real) / float
+  true / True
+  false / False
+  null / None
+
+Methods:
+  load() from file
+  loads() from string
+
+Read a file with context manager, <read_file> is the file-like object
+with open ("data_file.json", "r") as read_file:
+    json.load(data, read_file)
+
+JSON from Python string:
+  data = json.loads(json_string)
+
+
+  
