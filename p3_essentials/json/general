@@ -65,5 +65,26 @@ with open ("data_file.json", "r") as read_file:
 JSON from Python string:
   data = json.loads(json_string)
 
+# Desirializing example using request
+import json
+import requests
+
+uri = 'https://jsonplaceholder.typicode.com/posts/1/'
+
+# Using json() method
+response = requests.get(uri)
+print(response.json()) # returns the json as a dict
+
+# Using loads() method
+response = requests.get(uri)
+response_json = json.loads(response.text)
+print(response_json) # returnsthe json as a dict
+
+json() vs loads()
+They both deserialize/decode from json to Python object
+json() is a requests thing where loads() is a JSON thing
+loads works with utf-8 only, where json() is more general 
+some people prefer json() over loads() since it is more flexible
+
 
   
