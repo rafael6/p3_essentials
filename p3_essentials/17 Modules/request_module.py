@@ -1,21 +1,28 @@
 __author__ = 'rafael'
 
-import requests
 import json
+import requests
 
-r = requests.get('http://httpbin.org/get')
-print(r.status_code)
-print(r.headers['content-type'])
-print(r.encoding)
-print(r.json())
+uri = 'https://jsonplaceholder.typicode.com/posts/1/'
 
-# This will return a str
+# Some methods
 response = requests.get(uri)
-print(response.text)
+print(response.text) # returns the json as a str
+print(response.status_code) # returns http status code an int
+print(response.headers['content-type']) # returns header info as str
+print(response.encoding) # returns encoding info as str
+print(response.json()) # returns the json as a dict
 
-# This will retrun a Python collection dict in this example
-# Method load decodes json to Python
-# See json file for details
+# Desirializing/decoding json
 response = requests.get(uri)
 response_json = json.loads(response.text)
-print(response_json)
+print(response_json) # returnsthe json as a dict
+
+'''
+json() vs loads()
+They both deserialize/decode from json to Python object
+json() is a requests thing where loads() is a JSON thing
+loads works with utf-8 only, json() is more general 
+some people prefer json() over loads() since it's more flexible
+'''
+
