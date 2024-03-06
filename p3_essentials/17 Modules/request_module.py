@@ -26,3 +26,19 @@ loads works with utf-8 only, json() is more general
 some people prefer json() over loads() since it's more flexible
 '''
 
+# Goon Function, JSON Get example
+def get_json(url):
+    response = requests.get(url)
+    if response.status_code == 200:
+        json_data = response.json()
+        return json_data
+    else:
+        return None
+
+json_data = get_json(url)
+if json_data:
+    print(json_data)
+else:
+    print("Failed to retrieve JSON data from the URL.")
+
+
