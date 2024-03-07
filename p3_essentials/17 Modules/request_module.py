@@ -26,7 +26,7 @@ loads works with utf-8 only, json() is more general
 some people prefer json() over loads() since it's more flexible
 '''
 
-# Goon Function, JSON Get example
+# JSON Get example function
 def get_json(url):
     response = requests.get(url)
     if response.status_code == 200:
@@ -40,5 +40,26 @@ if json_data:
     print(json_data)
 else:
     print("Failed to retrieve JSON data from the URL.")
+
+
+# Download file function example
+import requests
+import re
+
+def download_file(url):
+    response = requests.get(url, stream=True)
+    
+    if "Content-Disposition" in response.headers:
+        filename = re.findall("filename=(.+)", response.headers["Content-Disposition"])[0]
+    else:
+        filename = url.split("/")[-1]
+    
+    with open(filename, "wb") as file:
+        for chunk in response.iter_content(chunk_size=1024):
+            if chunk:
+                file.write(chunk)
+
+url = "https://example.com/file.zip"
+download_file(url)
 
 
