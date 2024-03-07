@@ -1,17 +1,19 @@
+'''
 To store and exchange data 
 It is readable but not as concise as YAML
 Python support JSON nitavely via json library 
 Serialization: (encoding, writing to disk) the process of transforming data into bytes to be stored or transmited 
 Deserialization: (decoding/reading into memory) the process of decoding JSON data that has been stored or delivered
+'''
 
-SERIALISATION:
+# SERIALISATION:
 Turning Python to JSON objects
 
-Methods:
+# Methods:
   dump() for writing data to file
   dumps() for reading to a string
 
-Python / JSON:
+# Python / JSON:
   dict / object
   list, tuple / array
   str / string
@@ -20,7 +22,7 @@ Python / JSON:
   False / false
   None / null
 
-JSON example:
+# JSON example:
 data = {
     "people": { 
         "name": "Rafael",
@@ -28,22 +30,22 @@ data = {
     }
 }
 
-Create a file with context manager, <write_file> is the file-like object
+# Create a file with context manager, <write_file> is the file-like object
 with open ("data_file.json", "w") as write_file:
-    json.dump(data, write_file)
+    json.dump(data, write_file, indent=4)
 
-Create native Python str, no file-like object since we are not writting to disk
+# Create native Python str, no file-like object since we are not writting to disk
 json_string = json.dumps(data)
 
-Nested/Indentation:
+# Nested/Indentation:
 json_string = json.dumps(data, indent=4)
 
-Separators:
+# Separators:
 Default = json_string = json.dumps(data, separators (", ", ": "))
 Compact = json_string = json.dumps(data, separators (",", ":"))
 
-DESERIALIZATION:
-Turning JSON into Python objects
+# DESERIALIZATION:
+# Turning JSON into Python objects
 JSON / Python:
   object / dict
   array / list
@@ -54,15 +56,15 @@ JSON / Python:
   false / False
   null / None
 
-Methods:
+# Methods:
   load() from file
   loads() from string
 
-Read a file with context manager, <read_file> is the file-like object
+# Read a file with context manager, <read_file> is the file-like object
 with open ("data_file.json", "r") as read_file:
     json.load(data, read_file)
 
-JSON from Python string:
+# JSON from Python string:
   data = json.loads(json_string)
 
 # Desirializing example using request
@@ -80,13 +82,15 @@ response = requests.get(uri)
 response_json = json.loads(response.text)
 print(response_json) # returnsthe json as a dict
 
+'''
 json() vs loads()
 They both deserialize/decode from json to Python object
 json() is a requests thing where loads() is a JSON thing
 loads works with utf-8 only, where json() is more general 
 some people prefer json() over loads() since it is more flexible
+'''
 
-#Good JSON Get Function Example
+# JSON Get Function Example
 def get_json(url):
     response = requests.get(url)
     if response.status_code == 200:
